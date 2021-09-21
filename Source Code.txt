@@ -1,0 +1,22 @@
+Cara membuat Packet Tracer 
+– SBC Actuate Dengan Topologi Python
+
+from gpio import *
+from time import *
+
+def main():
+	while True:
+		motion_sensor = digitalRead(9)
+		if motion_sensor == HIGH:
+			print ('Motion Detected')
+			print('Turning On thr Coffee Maker')
+			customWrite(1,1)
+			customWrite(2,2)
+			delay(6000)
+			print('Coffe_Ready')
+			customWrite(1,0)
+			customWrite(2,0)
+		delay(600)
+		
+if __name__ == "__main__":
+	main()
